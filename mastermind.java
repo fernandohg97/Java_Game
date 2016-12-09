@@ -15,6 +15,7 @@ class mastermind
     // Usuario elige nivel de dificultad
     public static void dificultad()
     {
+      boolean seguir=true;
       System.out.println();
       Scanner input = new Scanner(System.in);
       int nivel;
@@ -22,24 +23,38 @@ class mastermind
       System.out.println("Nivel 2: 4 digitos");
       System.out.println("Nivel 3: 5 digitos\n");
       System.out.print("Que nivel deseas jugar: ");
-      nivel = input.nextInt();
-      while (nivel!=1 && nivel!=2 && nivel!=3)
-      {
-        System.out.println("No existe este nivel, ingresa un nivel correcto: ");
-        nivel = input.nextInt();
-      }
-      if (nivel==1)
-      {
-        numAleatorio1();
-      }
-      else if (nivel==2)
-      {
-        numAleatorio2();
-      }
-      else
-      {
-        numAleatorio3();
-      }
+
+        do {
+        seguir = true;
+        try
+        {
+          nivel = input.nextInt();
+        }
+        catch (Exception e)
+        {
+          seguir = false;
+          System.out.print("No existe este nivel, ingresa un nivel correcto: ");
+          input.nextLine();
+        }
+      } while (seguir==false);
+
+      // while (nivel!=1 && nivel!=2 && nivel!=3)
+      // {
+      //
+      //   nivel = input.nextInt();
+      // }
+      // if (nivel==1)
+      // {
+      //   numAleatorio1();
+      // }
+      // else if (nivel==2)
+      // {
+      //   numAleatorio2();
+      // }
+      // else
+      // {
+      //   numAleatorio3();
+      // }
     }
 
     // Numero aleatorio con 5 digitos
