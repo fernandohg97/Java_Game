@@ -201,7 +201,7 @@ class mastermind
       }
       if (opcion.equals("si"))
       {
-        dificultas();
+        dificultad();
       }
       else
       {
