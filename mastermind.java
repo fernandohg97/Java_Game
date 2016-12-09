@@ -11,15 +11,17 @@ class mastermind
     System.out.println("RECUERDA: Puede haber numeros repetidos e ingresa un numero a la vez.\n");
     dificultad();
   }
+
     // Usuario elige nivel de dificultad
     public static void dificultad()
     {
+      System.out.println();
       Scanner input = new Scanner(System.in);
       int nivel;
       System.out.println("Nivel 1: 3 digitos");
       System.out.println("Nivel 2: 4 digitos");
       System.out.println("Nivel 3: 5 digitos\n");
-      System.out.println("Que nivel deseas jugar: ");
+      System.out.print("Que nivel deseas jugar: ");
       nivel = input.nextInt();
       while (nivel!=1 && nivel!=2 && nivel!=3)
       {
@@ -40,6 +42,7 @@ class mastermind
       }
     }
 
+    // Numero aleatorio con 5 digitos
     public static void numAleatorio1()
     {
       int cant=3;
@@ -60,8 +63,7 @@ class mastermind
       comparacion(num_random,cant);
     }
 
-
-
+    // Numero aleatorio con 4 digitos
     public static void numAleatorio2()
     {
       int cant=4;
@@ -81,7 +83,7 @@ class mastermind
       // System.out.println();
       comparacion(num_random,cant);
     }
-
+    // Numero aleatorio con 5 digitos
     public static void numAleatorio3()
     {
       int cant=5;
@@ -102,18 +104,7 @@ class mastermind
       comparacion(num_random,cant);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    // Se le piden numeros al usuario y compara los dos arreglos
     public static void comparacion(int cifra[],int cantidad)
     {
       int nuevaCifra[] = new int[cantidad],num;
