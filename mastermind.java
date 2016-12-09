@@ -201,7 +201,7 @@ class mastermind
       }
       if (opcion.equals("si"))
       {
-        numAleatorio();
+        dificultas();
       }
       else
       {
