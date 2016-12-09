@@ -14,7 +14,7 @@ class mastermind
     // Usuario elige nivel de dificultad
     public static void dificultad()
     {
-      Scanner input = Scanner(System.in);
+      Scanner input = new Scanner(System.in);
       int nivel;
       System.out.println("Nivel 1: 3 digitos");
       System.out.println("Nivel 2: 4 digitos");
