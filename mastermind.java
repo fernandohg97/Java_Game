@@ -38,23 +38,22 @@ class mastermind
         }
       } while (seguir==false);
 
-      // while (nivel!=1 && nivel!=2 && nivel!=3)
-      // {
-      //
-      //   nivel = input.nextInt();
-      // }
-      // if (nivel==1)
-      // {
-      //   numAleatorio1();
-      // }
-      // else if (nivel==2)
-      // {
-      //   numAleatorio2();
-      // }
-      // else
-      // {
-      //   numAleatorio3();
-      // }
+      while (nivel!=1 && nivel!=2 && nivel!=3)
+      {
+        nivel = input.nextInt();
+      }
+      if (nivel==1)
+      {
+        numAleatorio1();
+      }
+      else if (nivel==2)
+      {
+        numAleatorio2();
+      }
+      else
+      {
+        numAleatorio3();
+      }
     }
 
     // Numero aleatorio con 5 digitos
@@ -122,6 +121,7 @@ class mastermind
     // Se le piden numeros al usuario y compara los dos arreglos
     public static void comparacion(int cifra[],int cantidad)
     {
+      boolean seguir=true;
       int nuevaCifra[] = new int[cantidad],num;
       int aciertos=0,coincidencias=0,intentos=0;
       Scanner input = new Scanner(System.in);
@@ -131,7 +131,20 @@ class mastermind
           for (int m=0;m<nuevaCifra.length;m++)
           {
             System.out.print("Ingresa un numero: ");
-            num=input.nextInt();
+            do
+            {
+              try{
+                seguir=true;
+                num=input.nextInt();
+              }
+              catch (Exception e)
+              {
+                seguir = false;
+                System.out.println("Caracter no valido.\nIngresa un numero: ");
+                input.nextLine();
+              }
+            } while(seguir==false);
+
             if(num>=0 && num<=9)
             {
               nuevaCifra[m] = num;
