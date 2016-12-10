@@ -25,9 +25,9 @@ class mastermind
       System.out.print("Que nivel deseas jugar: ");
 
         do {
-        seguir = true;
         try
         {
+          seguir = true;
           nivel = input.nextInt();
         }
         catch (Exception e)
@@ -40,6 +40,7 @@ class mastermind
 
       while (nivel!=1 && nivel!=2 && nivel!=3)
       {
+        System.out.print("No existe este nivel, ingresa un nivel correcto: ");
         nivel = input.nextInt();
       }
       if (nivel==1)
