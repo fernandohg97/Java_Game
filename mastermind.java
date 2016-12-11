@@ -18,7 +18,7 @@ class mastermind
       boolean seguir=true;
       System.out.println();
       Scanner input = new Scanner(System.in);
-      int nivel;
+      int nivel=0;
       System.out.println("Nivel 1: 3 digitos");
       System.out.println("Nivel 2: 4 digitos");
       System.out.println("Nivel 3: 5 digitos\n");
@@ -41,7 +41,19 @@ class mastermind
       while (nivel!=1 && nivel!=2 && nivel!=3)
       {
         System.out.print("No existe este nivel, ingresa un nivel correcto: ");
-        nivel = input.nextInt();
+        do {
+        try
+        {
+          seguir = true;
+          nivel = input.nextInt();
+        }
+        catch (Exception e)
+        {
+          seguir = false;
+          System.out.print("No existe este nivel, ingresa un nivel correcto: ");
+          input.nextLine();
+        }
+      } while (seguir==false);
       }
       if (nivel==1)
       {
@@ -123,7 +135,7 @@ class mastermind
     public static void comparacion(int cifra[],int cantidad)
     {
       boolean seguir=true;
-      int nuevaCifra[] = new int[cantidad],num;
+      int nuevaCifra[] = new int[cantidad],num=0;
       int aciertos=0,coincidencias=0,intentos=0;
       Scanner input = new Scanner(System.in);
       while (!Arrays.equals(cifra,nuevaCifra))
@@ -141,7 +153,7 @@ class mastermind
               catch (Exception e)
               {
                 seguir = false;
-                System.out.println("Caracter no valido.\nIngresa un numero: ");
+                System.out.print("Caracter no valido.\nIngresa un numero: ");
                 input.nextLine();
               }
             } while(seguir==false);
