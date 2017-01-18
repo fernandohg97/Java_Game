@@ -1,6 +1,8 @@
 # Java_Game
 MasterMind Game
+
 Instrucciones:
+
 El juego consiste en adivinar una cifra numerica, ya sea de 3, 4 o 5 numeros de acuerdo al nivel que elijas.
 
 El numero a adivinar es dado aleatoriamente por el programa.
